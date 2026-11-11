@@ -1,0 +1,10 @@
+# Source spreadsheets from NBS, about 180MB. Regenerate with scripts/download.py
+raw/
+extracted/
+
+__pycache__/
+*.pyc
+.venv/
+.env
+.DS_Store
+Thumbs.db
