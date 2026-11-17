@@ -6,7 +6,7 @@ Part of my portfolio at **https://dataforbetter.github.io/**.
 
 ## The short version
 
-The national average says the market is calm. Between December 2024 and February 2025 it moved 6%. Over the same two months the gap between the cheapest and dearest state went from 20% to **81%**, and one state was paying ₦1,730 a litre while another paid ₦957.
+The national average says the market is calm. Between December 2024 and February 2025 it moved 4.8%, from ₦1,189 to ₦1,246. Over the same two months the gap between the cheapest and dearest state went from 20% to **81%**, and one state was paying ₦1,730 a litre while another paid ₦957.
 
 Three things came out of the data.
 
@@ -16,11 +16,13 @@ Three things came out of the data.
 
 **The early 2025 shock was petrol only, and it hit states that are not otherwise expensive.** Kaduna sat 1.1% below the national median before the window, 32.3% above during it, and 2.2% below after. Jigawa, Sokoto, Kano, Imo and Enugu show the same shape. In the North West during those months petrol ran 18.1% above its own normal while diesel and kerosene moved 0.3% and cooking gas fell. Diesel and kerosene travel the same roads through the same depots, so this was not a transport or general energy shock. Something specific to petrol distribution broke.
 
+Full results, including a second shock in early 2026 with the opposite signature, are in [`docs/FINDINGS.md`](docs/FINDINGS.md).
+
 ## The data
 
 Everything comes from the National Bureau of Statistics of Nigeria, published monthly at [microdata.nigerianstat.gov.ng](https://microdata.nigerianstat.gov.ng), collected from over 10,000 outlets across all 774 local government areas.
 
-4,093 state-level fuel prices across six products and nineteen months, and 4,800 zone-level food prices across 41 items and seventeen months.
+4,093 state-level fuel prices across six products and nineteen months, and 4,800 zone-level food prices across the same nineteen months, 42 to 43 items in any given month. The basket was rebased between December 2024 and January 2025, so there are 84 distinct item labels in total.
 
 ## Running it
 
@@ -54,6 +56,7 @@ Built and tested on PostgreSQL 16, running on Supabase.
 | `sql/01_schema.sql` | Staging tables and a star schema |
 | `sql/02_transform.sql` | Builds the dimensions and facts from staging |
 | `sql/10` to `sql/40` | One file per question, each creating views |
+| `docs/FINDINGS.md` | **What the data shows, and what it cannot show** |
 | `docs/SCOPE.md` | Questions, data, what is out of scope, limitations |
 | `docs/ETL_NOTES.md` | What the source files do and how it was handled |
 | `docs/DATA_DICTIONARY.md` | Every table, column and view |
