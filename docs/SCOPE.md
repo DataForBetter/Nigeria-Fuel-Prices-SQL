@@ -17,7 +17,7 @@ The period contains two separate shocks, and they are opposites. In early 2025 p
 | 1 | What happened to fuel prices nationally across the period? | `sql/10_national_trend.sql` |
 | 2 | How much does what you pay depend on where you live, and is the gap closing? | `sql/20_dispersion.sql` |
 | 3 | What happened in early 2025, and who did it hit? | `sql/30_divergence.sql` |
-| 4 | Do fuel costs reach food prices? | `sql/40_passthrough.sql` |
+| 4 | Do fuel costs reach food prices? Tested using early 2025 as a natural experiment. | `sql/40_passthrough.sql` |
 | 5 | When a price moves, is it the country moving together or the states coming apart? | `sql/50_shock_profile.sql` |
 
 ## Who would use this
@@ -47,7 +47,7 @@ Retail price levels, trends, rankings and dispersion. Comparison between fuel an
 - **Causation.** The data shows the North West diverged in early 2025 and that every fuel rose in early 2026. It cannot say why either happened. Any explanation must be sourced and cited, not inferred from the prices. `docs/FINDINGS.md` keeps published context in a section of its own, separate from the results.
 - **Household impact.** No income or consumption data, so nothing here supports a claim about affordability or living standards.
 - **Anything below state level.** NBS collects across all 774 LGAs and publishes state averages only.
-- **Food at state level.** Published by zone only, which holds question 4 at a coarser geography than question 2.
+- **Food at state level.** Published by zone only. Question 4 therefore rolls fuel up to the same six zones, which makes the comparison valid at the cost of leaving six observations to draw a line through.
 - **Food before January 2025.** NBS rebased the basket between December 2024 and January 2025. See the limitation below.
 
 ## Limitations

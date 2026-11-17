@@ -14,6 +14,8 @@ Three things came out of the data.
 
 **The market is more integrated now than when the series starts.** The coefficient of variation for petrol across states runs around 5% in late 2024, spikes to 17.9% in February 2025, then settles at **2.3 to 4%** from October 2025 on.
 
+**Fuel costs did not reach food prices.** Early 2025 left the six zones paying very different amounts for the same petrol, from ₦1,414 in the North West down to ₦1,062 in the South West, which is regional variation in fuel cost not caused by a national shock. Food prices in those zones show no sign of it. The zone paying a third more than anyone else recorded one of the smallest food increases, and the correlation across the months where an effect could appear runs between 0.17 and **−0.30**. That rules out a large effect and, with only six zones, cannot rule out a small one.
+
 **The early 2025 shock was petrol only, and it hit states that are not otherwise expensive.** Kaduna sat 1.1% below the national median before the window, 32.3% above during it, and 2.2% below after. Jigawa, Sokoto, Kano, Imo and Enugu show the same shape. In the North West during those months petrol ran 18.1% above its own normal while diesel and kerosene moved 0.3% and cooking gas fell. Diesel and kerosene travel the same roads through the same depots, so this was not a transport or general energy shock. Something specific to petrol distribution broke.
 
 Full results, including a second shock in early 2026 with the opposite signature, are in [`docs/FINDINGS.md`](docs/FINDINGS.md).

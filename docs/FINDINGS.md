@@ -144,6 +144,67 @@ import-parity-exposed product in the set.
 
 ---
 
+## 3b. Fuel costs did not reach food prices
+
+The obvious way to ask whether fuel prices drive food prices is to correlate the
+two national series, and it proves nothing. Both follow the naira and the oil
+price, so they rise together whether or not one causes the other.
+
+Episode 1 provides a way around that. For four months the six zones paid very
+different amounts for the same petrol, and then the gap closed. That is
+variation in fuel cost across regions that is **not** produced by a national
+shock, which is what is needed to isolate a fuel effect.
+
+| Zone | Petrol, Jan–Apr 2025 | Above cheapest zone | Food index, Jul 2025 |
+|---|---|---|---|
+| North West | ₦1,414 | +33.1% | 110.2 |
+| South East | ₦1,311 | +23.4% | 117.6 |
+| North Central | ₦1,277 | +20.2% | 110.1 |
+| South South | ₦1,228 | +15.6% | 107.7 |
+| North East | ₦1,194 | +12.4% | 112.3 |
+| South West | ₦1,062 | baseline | 116.0 |
+
+Food index is each zone's basket relative to January 2025 = 100.
+
+If fuel costs fed food prices, those last two columns would rise together. They
+do not. The zone that paid a third more for petrol than anyone else shows one of
+the **smallest** food increases, and the two zones where food rose most, South
+East and South West, sit at opposite ends of the fuel range.
+
+Across the months when an effect could plausibly appear, May to September 2025,
+the correlation between what a zone paid for fuel and where its food prices sat
+runs between **0.17 and −0.30**. With six zones, a correlation has to exceed
+about 0.81 before it is distinguishable from chance. Nothing here is close.
+
+**The conclusion is no detectable effect, not a negative one.** This rules out a
+large regional pass-through over this period. It cannot rule out a small one, and
+it says nothing about the national relationship.
+
+### A correlation worth not reporting
+
+Run the same correlation further out and it reaches **−0.87** by December 2025,
+which clears the significance threshold and would look like a real result.
+
+It is not one. By December the fuel gap had been closed for eight months, so
+there is no mechanism left to produce an effect. The six food indices by then
+span only seven points, from 98.8 to 105.9, and a correlation computed across
+six observations over a range that narrow will swing on noise alone. December is
+also the post-harvest period, when Nigerian food prices fall for reasons that
+have nothing to do with fuel.
+
+The figure is recorded here, and in the comment on `v_passthrough_result`,
+precisely so that nobody later reports it as a finding.
+
+### What this question needs instead
+
+Food prices are published by zone and fuel by state, so this test runs on six
+observations and can only detect a large effect. State level food prices would
+raise that to 37 and make a modest effect detectable. NBS collects across all
+774 local government areas, so the data exists. It is simply not published at
+that granularity.
+
+---
+
 ## 4. The diagnostic
 
 The method this project is really demonstrating is small and reusable.
@@ -185,11 +246,11 @@ across surveyed outlets, which during scarcity includes outlets selling above th
 official rate. The gap between the two is itself a measure of how badly the official
 price had stopped describing the market.
 
-**Food prices are zone level, not state level.** Any fuel to food analysis
-therefore compares 37 state fuel observations against six zone food observations,
-and the zone aggregation will absorb exactly the state level variation that
-Episode 1 is made of. Pass-through conclusions from this dataset should be treated
-as weak.
+**Food prices are zone level, not state level.** Section 3b works around this by
+rolling fuel up to the same six zones, which makes the comparison valid but leaves
+only six observations. That is enough to rule out a large effect and not enough to
+detect a modest one. It also means nothing can be said about how Jigawa behaved
+differently from its neighbours, only about the North West as a block.
 
 **Nineteen months is two episodes.** It is not enough to establish what is normal.
 The claim that petrol is normally the tightest priced product rests on fifteen

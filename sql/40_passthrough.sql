@@ -1,4 +1,14 @@
 -- Q4. Do fuel costs reach food prices?
+--
+-- The honest difficulty is that fuel and food move together anyway, because
+-- both follow the naira and the oil price. Finding them correlated nationally
+-- would prove nothing.
+--
+-- Early 2025 solves that. For four months the six zones paid very different
+-- amounts for the same petrol, from 1,414 naira in the North West down to
+-- 1,062 in the South West, and then the gap closed. That is regional variation
+-- in fuel cost that is not caused by a national shock, which is the thing
+-- needed to isolate a fuel effect. The test below uses it.
 -- Food is published by zone and fuel by state, so fuel is rolled up to zone
 -- averages to meet it. Both series are rebased to January 2025 = 100, because
 -- a naira average across items of wildly different prices is dominated by the
@@ -65,3 +75,66 @@ join v_zone_fuel_index dz
   on dz.zone_name = fd.zone_name
  and dz.month_date = fd.month_date
  and dz.product_name = 'Diesel (AGO), litre';
+
+
+-- ---------------------------------------------------------------------------
+-- The natural experiment
+-- ---------------------------------------------------------------------------
+
+-- What each zone paid for petrol while the zones were far apart, and how far
+-- above the cheapest zone that put it.
+
+create or replace view v_episode_fuel_gap as
+with zone_level as (
+    select z.zone_name, avg(f.price_naira) as petrol_during
+    from fact_fuel_price f
+    join dim_product p on p.product_id = f.product_id
+    join dim_state   s on s.state_id   = f.state_id
+    join dim_zone    z on z.zone_id    = s.zone_id
+    where p.product_name = 'Petrol (PMS), litre'
+      and f.month_date between date '2025-01-01' and date '2025-04-01'
+    group by z.zone_name
+)
+select zone_name,
+       round(petrol_during::numeric, 0) as petrol_during,
+       round((100.0 * petrol_during / min(petrol_during) over () - 100)::numeric, 1)
+           as pct_above_cheapest_zone
+from zone_level;
+
+
+-- Each zone's fuel cost during the episode set against its food prices in the
+-- months afterwards. If fuel feeds food, these two columns should rise together.
+
+create or replace view v_passthrough_test as
+select g.zone_name,
+       g.petrol_during,
+       g.pct_above_cheapest_zone,
+       fi.month_date as food_month,
+       fi.food_index
+from v_episode_fuel_gap g
+join v_zone_food_index fi on fi.zone_name = g.zone_name
+where fi.month_date > date '2025-04-01';
+
+
+-- The answer, one row per month after the episode. Correlation across the six
+-- zones between what a zone paid for fuel and where its food prices sat.
+
+create or replace view v_passthrough_result as
+select food_month,
+       count(*)                                            as zones,
+       round(corr(petrol_during, food_index)::numeric, 3)  as correlation
+from v_passthrough_test
+group by food_month
+order by food_month;
+
+comment on view v_passthrough_result is
+  'Read only the first few months. Six zones is six data points, and with n = 6 a '
+  'correlation must exceed about 0.81 before it is distinguishable from chance. In '
+  'May to September 2025, the window where a fuel effect could plausibly appear, '
+  'the correlation sits between 0.17 and -0.30, which is nothing. From December '
+  '2025 it reaches -0.87, and that figure is a trap rather than a finding: the fuel '
+  'gap had been closed for eight months, the six food indices by then span only '
+  'seven points, and those are the post-harvest months when Nigerian food prices '
+  'normally fall. A correlation computed across six points over a seven-point range '
+  'will swing wildly on noise. The conclusion is no detectable pass-through, not a '
+  'negative one.';
