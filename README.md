@@ -20,6 +20,13 @@ Three things came out of the data.
 
 Full results, including a second shock in early 2026 with the opposite signature, are in [`docs/FINDINGS.md`](docs/FINDINGS.md).
 
+## The dashboard
+
+[![Four charts from the interactive dashboard](dashboards/00_dashboard_overview.png)](https://dataforbetter.github.io/dashboard/)
+
+Interactive version at **[dataforbetter.github.io/dashboard](https://dataforbetter.github.io/dashboard/)**. Drag
+through the months on the third chart and watch the country come apart and back together.
+
 ## The data
 
 Everything comes from the National Bureau of Statistics of Nigeria, published monthly at [microdata.nigerianstat.gov.ng](https://microdata.nigerianstat.gov.ng), collected from over 10,000 outlets across all 774 local government areas.

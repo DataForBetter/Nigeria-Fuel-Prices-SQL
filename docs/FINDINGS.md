@@ -246,15 +246,37 @@ across surveyed outlets, which during scarcity includes outlets selling above th
 official rate. The gap between the two is itself a measure of how badly the official
 price had stopped describing the market.
 
-**Food prices are zone level, not state level.** Section 3b works around this by
-rolling fuel up to the same six zones, which makes the comparison valid but leaves
-only six observations. That is enough to rule out a large effect and not enough to
-detect a modest one. It also means nothing can be said about how Jigawa behaved
-differently from its neighbours, only about the North West as a block.
+**Fuel is published by state and food by region, so fuel was rolled up to match.**
+Section 3b averages the states in each region, which puts the two series on the same
+footing and is the right move. It costs something specific, and the cost is worth
+naming because it works against the conclusion.
 
-**Nineteen months is two episodes.** It is not enough to establish what is normal.
-The claim that petrol is normally the tightest priced product rests on fifteen
-ordinary months, which is suggestive rather than conclusive.
+Averaging compresses the thing being measured. Jigawa at ₦1,730 disappears into a
+North West average of ₦1,414. At state level the gap between cheapest and dearest
+was 81 per cent; at regional level it is 33 per cent. So the test is looking for the
+effect of a shock less than half the size of the one the country actually
+experienced, across six observations rather than thirty-seven. Both of those reduce
+its power to detect anything.
+
+The practical consequence: a null result at regional level is weaker evidence of no
+effect than a null result at state level would have been. It rules out a large
+regional effect. It does not rule out that Jigawa, which the North West average
+hides, saw its food prices move. Only state level food data could answer that.
+
+**The series starts in November 2024, and the question starts in mid-2023.** Nigeria
+removed the petrol subsidy in May 2023, and that removal is the event this whole
+question hangs on. The eighteen months between the removal and the start of this
+series are missing, which means the analysis can describe what the deregulated market
+did in 2025 and 2026 without showing how it got there.
+
+What nineteen months does support is exactly what is above: two shocks characterised
+in close detail, separated by a diagnostic that distinguishes them. What it does not
+support is a claim about what an ordinary year looks like, since the claim that petrol
+is normally the tightest priced product rests on fifteen ordinary months.
+
+Extending the series back to May 2023 is the single change that would add the most to
+this project. It is a sourcing job on the earlier NBS releases rather than a limit of
+the method, and the pipeline would ingest them unchanged.
 
 **One known source defect is preserved rather than corrected.** See `ETL_NOTES.md`
 for the zone misclassification NBS repeats across one series, which is carried
