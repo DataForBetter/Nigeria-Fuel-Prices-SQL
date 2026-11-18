@@ -2,7 +2,7 @@
 
 Nineteen months of Nigerian fuel and food prices, November 2024 to May 2026, from
 National Bureau of Statistics price watch releases. 4,093 state level fuel
-observations across six products and 37 states, and 4,800 zone level food
+observations across six products and the 36 states plus the FCT, and 4,800 zone level food
 observations across six zones, 42 to 43 items in any given month and 84 distinct
 item labels in total, because the basket was rebased in January 2025.
 
@@ -35,7 +35,7 @@ state level reporting rather than in the source.
 ## 1. The dataset contains two fuel price shocks, and they are opposites
 
 Decomposing every product into its **level** (the national mean) and its
-**dispersion** (the coefficient of variation across the 37 states) separates two
+**dispersion** (the coefficient of variation across the 36 states and the FCT) separates two
 episodes that look similar in a headline and are nothing alike underneath.
 
 | Product | Level Nov–Dec 24 | Level Jan–Apr 25 | CV Nov–Dec 24 | CV Jan–Apr 25 |
@@ -105,7 +105,7 @@ The dispersion was not random. It mapped onto distance from Lagos.
 | South West | ₦1,062 | ₦1,017 |
 
 During the episode the North West paid 33 per cent more than the South West.
-Afterwards every zone sat inside a ₦29 band. The four cheapest states in February
+Afterwards the zones converged: in May itself they span ₦43.73, from ₦1,005 in North Central to ₦1,049 in South East, and averaged over May to August the band is ₦29. The four cheapest states in February
 2025 were Oyo, Ekiti, Osun and Lagos, all South West, all near the refinery and the
 import terminals. The four dearest were Jigawa at ₦1,730, Sokoto, Kaduna
 and Kano, all North West.
@@ -113,15 +113,50 @@ and Kano, all North West.
 For four months, the price of petrol in a state was a function of how far that
 state was from where the petrol entered the country. Then it stopped being that.
 
+### But the zone was not hit as a block
+
+Averaging the North West hides something that matters. Between December 2024 and
+January 2025, within that one zone:
+
+| State | Dec 2024 | Jan 2025 |
+|---|---|---|
+| Kaduna | ₦1,161 | **₦1,638** |
+| Kano | ₦1,152 | **₦1,542** |
+| Jigawa | ₦1,258 | **₦1,530** |
+| Katsina | ₦1,188 | **₦1,469** |
+| Sokoto | ₦1,113 | ₦1,330 |
+| Zamfara | ₦1,160 | **₦1,104** |
+| Kebbi | ₦1,194 | **₦1,090** |
+
+Four states rose by 23 to 41 per cent. Two fell. In the same zone, in the same
+month.
+
+A transport cost shock applied to a region does not do that, and neither does a
+road or a security problem affecting the north generally. Whatever drove this was
+finer-grained than the zone, which argues against the simplest reading of the
+geography in the table above. Distance from Lagos organises the zone averages, and
+it does not explain why Kebbi and Zamfara went the other way while their immediate
+neighbours doubled down.
+
+This is the strongest internal evidence that the cause sits in distribution and
+supply arrangements rather than in transport cost, since transport cost is the one
+thing all seven states broadly share.
+
 ### This is not a data artefact
 
 A spread that collapses from 64 per cent to 16 per cent in one month invites the
 suspicion that NBS changed how it collected or reported the series. It did not.
-Every month carries 37 states, and 34 to 37 distinct prices, so state level survey
+Every month carries all 37 units, and 34 to 37 distinct prices, so state level survey
 collection continued unbroken. The coefficient of variation moves smoothly into and
 out of the episode (4.9, 5.2, 14.0, 17.9, 16.0, 12.0, 3.7) rather than stepping.
 The raw February 2025 workbook independently flags North West at ₦1,484 against
 South West at ₦995 in its own summary column.
+
+One methodological note. Every zone figure in this analysis is computed from the
+state rows, not read from the zone rows NBS prints in its own summaries. Those
+summary rows are not always internally consistent with the state appendix in the
+same report, so recomputing from the states and stating the aggregation rule is
+the safer basis.
 
 ---
 
@@ -195,6 +230,30 @@ have nothing to do with fuel.
 The figure is recorded here, and in the comment on `v_passthrough_result`,
 precisely so that nobody later reports it as a finding.
 
+### What the literature expects
+
+A null result is only interpretable against what the effect was supposed to look
+like. The closest published work is Obikili's analysis of Nigerian fuel and food
+prices, which uses both a national monthly series and a state level panel and
+describes the effect as **small and short-lived**: higher monthly food inflation
+for roughly four months nationally, and a positive association at a two month lag
+in the state model
+([Obikili, January 2024](https://www.dropbox.com/scl/fi/cyembs0sil09p4nvcsn6r/manuscript.pdf?rlkey=mnve8abvzx1nar9fszmjks5m9&dl=1)).
+
+That matters for how this null should be read. A small, short-lived effect is
+exactly the kind this test is least able to detect, for the reasons in the
+limitations below. The honest statement is therefore:
+
+> This regional analysis finds no detectable association between relative petrol
+> prices and subsequent food prices. That is compatible with Nigerian evidence
+> that the association is small, lagged and short-lived, and it does not establish
+> that pass-through is absent.
+
+Note also that the specifications differ. A regional comparison removes any common
+national fuel shock by construction, which is the whole point of using the episode
+as an experiment, and it also removes exactly the variation the national studies
+measure. The two are not estimating the same quantity.
+
 ### What this question needs instead
 
 Food prices are published by zone and fuel by state, so this test runs on six
@@ -233,10 +292,20 @@ why either episode happened. Section 6 records what public reporting says about 
 same period, and that is context, not evidence produced by this analysis.
 
 **The start of Episode 1 is not explained by the documented timeline.** The
-dispersion is already at 73 per cent in January 2025. The best documented supply
-disruption of that period begins at the end of February. Whatever began the
-episode, it was underway before the event most often cited as its cause. This is an
-open question, not a settled one.
+dispersion is already at 72.5 per cent in January 2025. The supply disruption most
+often cited for that period, around the naira denominated crude arrangement, runs
+from late February into March. Whatever began the episode was underway before the
+event usually blamed for it.
+
+Searching the contemporaneous record for January 2025 turns up a transition in how
+petrol was bought and distributed, including a dispute over marketer access through
+NNPC in late 2024, a move toward buying directly from the refinery, and marketers'
+later accounts of grounded northern depots and unpaid bridging claims. None of that
+amounts to evidence that those arrangements produced January's state prices. No
+contemporaneous January report quantifying a Kaduna, Kano or Jigawa shortfall has
+been found. The onset remains an open question, and the within-zone split above,
+where Kebbi and Zamfara fell while their neighbours rose, is the sharpest clue in
+the data itself.
 
 **NBS surveys what consumers actually paid, not official prices.** This matters.
 Press reporting for March 2025 put northern pump prices near ₦960 while this
@@ -291,7 +360,7 @@ Recorded for orientation. None of it is produced by this analysis and none of it
 tested by it.
 
 On Episode 1, the crude-for-naira arrangement under which Dangote refinery bought
-domestic crude in naira lapsed on 1 March 2025, and the refinery suspended naira
+domestic crude in naira reached the end of its first phase on 31 March 2025, with reporting through March describing interruptions, and the refinery suspended naira
 denominated product sales, saying its naira sales had exceeded the value of naira
 denominated crude it had received
 ([AllAfrica, 19 March 2025](https://allafrica.com/stories/202503200033.html)).

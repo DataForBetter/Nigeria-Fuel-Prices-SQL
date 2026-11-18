@@ -9,7 +9,7 @@ Loaded directly from the CSVs in `data/`. Text and dates as published, one row p
 | --- | --- | --- |
 | product | text | Fuel and unit, e.g. `Petrol (PMS), litre` |
 | zone | text | One of six geopolitical zones |
-| state | text | One of 37 states including FCT Abuja |
+| state | text | One of the 36 states, or FCT Abuja |
 | month | date | First of the reference month |
 | price | numeric | Average retail price in naira |
 | source_file | text | The NBS workbook the row came from |

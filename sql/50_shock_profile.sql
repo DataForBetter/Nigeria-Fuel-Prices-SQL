@@ -2,7 +2,7 @@
 -- or is it the states coming apart?
 --
 -- Every month a product has two separable properties: how expensive it is on
--- average (the level), and how much the 37 states disagree with each other
+-- average (the level), and how much the 36 states and the FCT disagree with each other
 -- (the dispersion). A national average reports only the first, which is why a
 -- month where every state agrees on a high price and a month where half the
 -- country pays double look identical in the headline.
